@@ -1,37 +1,21 @@
 import type { Metadata } from "next";
-import {
-  AccentCallout,
-  PageHero,
-  SectionFrame,
-} from "@/components/page-sections";
+import { SectionFrame } from "@/components/page-sections";
+import { privacyPolicyHtml } from "@/lib/legal-content";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy Policy route preserved during the Xandeum site migration.",
+  description: "Xandeum Privacy Policy.",
 };
 
 export default function PrivacyPolicyPage() {
   return (
-    <>
-      <PageHero
-        eyebrow="Legal"
-        title="Privacy Policy"
-        description="This route has been preserved so existing xandeum.com links continue to resolve during the migration out of Wix."
-      />
-      <SectionFrame className="pt-0">
-        <div className="rounded-[6px] border border-white/10 bg-white/[0.04] p-6">
-          <p className="text-sm leading-8 text-[var(--text-muted)]">
-            The exact Privacy Policy text from the current live site still needs
-            to be migrated into this Next.js version. I am keeping the route
-            live now to prevent broken links, but the real policy text should be
-            inserted before production cutover.
-          </p>
-        </div>
-      </SectionFrame>
-      <AccentCallout
-        title="Production note"
-        body="This path now resolves, but the official privacy copy still needs a direct migration from the current site."
-      />
-    </>
+    <SectionFrame>
+      <div className="mx-auto max-w-5xl rounded-[6px] border border-white/10 bg-white/[0.04] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.22)] sm:p-8">
+        <div
+          className="legal-copy"
+          dangerouslySetInnerHTML={{ __html: privacyPolicyHtml }}
+        />
+      </div>
+    </SectionFrame>
   );
 }

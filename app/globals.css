@@ -62,3 +62,29 @@ a {
   background: rgba(255, 122, 26, 0.32);
   color: white;
 }
+
+.legal-copy {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.9;
+}
+
+.legal-copy p,
+.legal-copy ul {
+  margin: 0 0 1rem;
+}
+
+.legal-copy ul {
+  padding-left: 1.3rem;
+  list-style: disc;
+}
+
+.legal-copy li {
+  margin: 0 0 0.7rem;
+}
+
+.legal-copy a {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
