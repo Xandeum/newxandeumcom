@@ -1,20 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 import { externalLinks, learnLinks, primaryNav } from "@/lib/site-content";
 
 function BrandMark() {
   return (
-    <div className="flex items-center gap-3">
-      <div className="flex h-9 w-9 items-center justify-center rounded-[6px] border border-white/15 bg-white/6 shadow-[0_0_32px_rgba(255,122,26,0.15)]">
-        <span className="text-sm font-semibold tracking-[0.28em] text-[var(--accent)]">
-          X
-        </span>
-      </div>
-      <div>
-        <p className="text-xs uppercase tracking-[0.34em] text-[var(--text-muted)]">
-          Xandeum
-        </p>
-        <p className="text-sm text-white/90">Scalable storage for Solana</p>
-      </div>
+    <div className="flex flex-col gap-3">
+      <Image
+        src="/xandeum-logo.png"
+        alt="Xandeum"
+        width={2032}
+        height={489}
+        className="h-auto w-[280px] max-w-full object-contain sm:w-[340px]"
+      />
+      <p className="pl-1 text-sm text-white/90">Scalable storage for Solana</p>
     </div>
   );
 }
